@@ -1,0 +1,84 @@
+﻿@model InsuranceCRM.Models.Policy
+
+@{
+    ViewBag.Title = "Insurance CRM - Search Policy";
+}
+
+<div>
+
+</div>
+<div class="jumbotron">
+    @using (Html.BeginForm())
+    {
+        <p>
+            Search By Policy Number: @Html.TextBox("Search_Data", ViewBag.FilterValue as string)
+            <input type="submit" value="Find" />
+        </p>
+    }
+</div>
+@{
+    <div>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PolicyNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InsurerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InsurerDOB)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InsurerPhone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PolicyType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PolicyExpiryDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PremiumAmount)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.PolicyDocumentLink)
+                </th>*@
+                <th></th>
+            </tr>
+
+            @{
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.PolicyNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.InsurerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.InsurerDOB)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.InsurerPhone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.PolicyType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.PolicyExpiryDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.PremiumAmount)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(model => model.PolicyDocumentLink)
+                    </td>*@
+                </tr>
+
+            }
+
+        </table>
+    </div>
+
+}
